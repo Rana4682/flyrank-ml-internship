@@ -1,8 +1,11 @@
 # Capstone Report — <your lane>
 
 Author: Rana Muhammad Hasnain
+
 Lane: Refresh / Content Opportunity Scoring
+
 Repo: https://github.com/Rana4682/flyrank-ml-internship
+
 Date: 27 July 2026
 
 1. Problem framing
