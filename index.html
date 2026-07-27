@@ -1,1 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>FlyRank ML Capstone | Rana Muhammad Hasnain</title>
+
+<style>
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f5f5;
+margin:0;
+padding:0;
+line-height:1.7;
+color:#333;
+}
+
+header{
+background:#0d6efd;
+color:white;
+padding:40px;
+text-align:center;
+}
+
+.container{
+width:90%;
+max-width:1000px;
+margin:auto;
+padding:30px;
+background:white;
+margin-top:20px;
+margin-bottom:30px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+h1,h2{
+color:#0d6efd;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+table,th,td{
+border:1px solid #ccc;
+}
+
+th,td{
+padding:12px;
+text-align:center;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+
+.code{
+background:#efefef;
+padding:12px;
+border-radius:6px;
+font-family:monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Google Search Ranking & Discoverability Capstone</h1>
+
+<h3>Refresh / Content Opportunity Scoring</h3>
+
+<p><strong>Author:</strong> Rana Muhammad Hasnain</p>
+
+<p>
+Built on the
+<a href="https://flyrank.ai" style="color:white;">
+FlyRank ML Internship Dataset
+</a>
+</p>
+
+</header>
+
+<div class="container">
+
+<h2>Abstract</h2>
+
+<p>
+
+This project develops a machine learning approach for identifying
+content pages that may benefit from refresh activities.
+Historical search performance signals including CTR,
+Average Position and Trend Percentage were analyzed.
+
+A transparent baseline scoring rule was created and compared
+against a Random Forest model.
+
+The results indicate that the model closely approximates the
+baseline scoring strategy while providing feature importance
+for editorial decision support.
+
+The findings are observational and intended only to support
+content prioritization rather than causal conclusions.
+
+</p>
+
+<h2>1. Research Question</h2>
+
+<p>
+
+Can historical search performance signals identify
+content pages that should be refreshed?
+
+</p>
+
+<ul>
+
+<li><b>Unit of Analysis:</b> One content page</li>
+
+<li><b>Output:</b> Ranked Refresh Priority Score</li>
+
+<li><b>Decision:</b> Help editors prioritize content updates</li>
+
+</ul>
+
+<h2>2. Dataset</h2>
+
+<ul>
+
+<li>Dataset: FlyRank Internship Warehouse</li>
+
+<li>File: content_refresh_anonymized.csv</li>
+
+<li>Records: 30,000</li>
+
+<li>Columns: 44</li>
+
+<li>No client-identifying information used</li>
+
+</ul>
+  <h2>3. Methodology</h2>
+
+<p>
+
+A transparent baseline scoring rule was created using three observed
+search performance signals.
+
+The baseline score was calculated from:
+
+</p>
+
+<ul>
+<li>CTR</li>
+<li>Average Position</li>
+<li>Trend Percentage</li>
+</ul>
+
+<p>
+
+A Random Forest Regressor was then trained to learn the same scoring
+behavior.
+
+The model used the following features:
+
+</p>
+
+<ul>
+<li>CTR</li>
+<li>Average Position</li>
+<li>Trend Percentage</li>
+</ul>
+
+<p>
+
+The target variable was the baseline refresh score.
+An 80/20 train-test split was used.
+Missing values were handled before training.
+Identifier fields such as content_id and client_id were excluded.
+
+</p>
+
+<h2>4. Results</h2>
+
+<table>
+
+<tr>
+<th>Model</th>
+<th>MAE</th>
+<th>R² Score</th>
+</tr>
+
+<tr>
+<td>Baseline</td>
+<td>-</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td>Random Forest</td>
+<td>0.1793</td>
+<td>0.8713</td>
+</tr>
+
+</table>
+
+<h3>Feature Importance</h3>
+
+<table>
+
+<tr>
+<th>Rank</th>
+<th>Feature</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Trend Percentage</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Average Position</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>CTR</td>
+</tr>
+
+</table>
+
+<h2>5. Limitations</h2>
+
+<ul>
+
+<li>Uses anonymized historical data only.</li>
+
+<li>Cannot prove causal relationships.</li>
+
+<li>External ranking factors are not included.</li>
+
+<li>Recommendations are intended for decision-support only.</li>
+
+</ul>
+  <h2>6. Ranked Recommendations</h2>
+
+<ul>
+<li>Refresh pages showing declining search trends.</li>
+<li>Improve pages with low CTR.</li>
+<li>Review pages with poor average positions.</li>
+<li>Monitor stable pages before making major updates.</li>
+</ul>
+
+<p><strong>Confidence:</strong> Medium</p>
+
+<p>
+These recommendations are based on observed historical search
+performance and are intended for decision-support only.
+</p>
+
+<h2>7. Reproducibility</h2>
+
+<ul>
+<li>Python</li>
+<li>Pandas</li>
+<li>Scikit-learn</li>
+<li>Random State: 42</li>
+</ul>
+
+<p>
+Repository:
+<a href="https://github.com/Rana4682/flyrank-ml-internship">
+https://github.com/Rana4682/flyrank-ml-internship
+</a>
+</p>
+
+<h2>Acknowledgements</h2>
+
+<p>
+Built on the
+<a href="https://flyrank.ai">FlyRank ML Internship Dataset</a>.
+This project is intended for educational and research purposes.
+</p>
+
+</div>
+
+<footer>
+
+<p>© 2026 Rana Muhammad Hasnain | FlyRank ML Capstone</p>
+
+</footer>
+
+</body>
+</html>
