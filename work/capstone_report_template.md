@@ -1,14 +1,11 @@
 # Capstone Report — <your lane>
 
-Author: Rana Muhammad Hasnain
+##Author: Rana Muhammad Hasnain
+##Lane: Refresh / Content Opportunity Scoring
+##Repo: https://github.com/Rana4682/flyrank-ml-internship
+##Date: 27 July 2026
 
-Lane: Refresh / Content Opportunity Scoring
-
-Repo: https://github.com/Rana4682/flyrank-ml-internship
-
-Date: 27 July 2026
-
-1. Problem framing
+##1. Problem framing
 
 This project supports editorial decision-making by identifying content pages that should be refreshed.
 
@@ -22,7 +19,7 @@ Cost of a wrong decision: A page may be refreshed unnecessarily or an important 
 
 Machine learning helps identify patterns in historical search performance that are difficult to detect using manual inspection alone.
 
-2. Data safety
+##2. Data safety
 
 Dataset used: FlyRank Internship Warehouse (content_refresh_anonymized.csv).
 
@@ -43,7 +40,7 @@ Only anonymized data was used. No client names, URLs, credentials, or private qu
 
 Potential leakage was considered by excluding identifier fields and using only observed search performance metrics.
 
-3. Baseline
+##3. Baseline
 
 A transparent rule-based baseline was created using:
 
@@ -55,7 +52,7 @@ Pages with lower CTR, poorer positions, and larger negative trends receive highe
 
 This baseline provides an interpretable comparison for the machine learning model.
 
-4. Model / analysis
+##4. Model / analysis
 
 Model used: Random Forest Regressor.
 
@@ -71,7 +68,7 @@ Baseline Refresh Score.
 
 The model was selected because it captures non-linear relationships while remaining easy to interpret through feature importance.
 
-5. Evaluation
+##5. Evaluation
 
 The dataset was divided using an 80/20 train-test split.
 
@@ -84,7 +81,7 @@ The Random Forest model produced lower prediction error and accurately approxima
 
 The results are intended for decision-support rather than causal claims.
 
-6. Interpretation
+##6. Interpretation
 
 Feature importance showed:
 
@@ -96,7 +93,7 @@ Observed search trends contributed the most to refresh prioritization.
 
 The model identified pages with declining performance as higher refresh candidates.
 
-7. Recommendation
+##7. Recommendation
 
 Recommended actions:
 
@@ -109,24 +106,21 @@ Confidence: Medium
 
 These recommendations are based on historical observations and should be combined with editorial judgment.
 
-8. Reproducibility
+##8. Reproducibility
 
 Repository:
 
 https://github.com/Rana4682/flyrank-ml-internship
 
-Environment:
+##Environment:
 
 Python
 Pandas
 Scikit-learn
 
-Random State:
+##Random State:
 
 42
 
 The project can be reproduced by cloning the repository, installing the required libraries, and running the notebooks from top to bottom.
-> baseline are the honest discrimination numbers.
-> language everywhere · no causal claims without an experiment or causal design · no
-> "predicted Google's algorithm" · no client-identifying details · numbers in this report
-> match a fresh re-run.
+
