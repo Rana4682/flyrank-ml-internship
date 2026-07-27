@@ -28,14 +28,14 @@ Dataset used: FlyRank Internship Warehouse (content_refresh_anonymized.csv).
 
 Features used:
 
-ctr
-avg_position
-trend_pct
+-ctr
+-avg_position
+-trend_pct
 
 Excluded fields:
 
-content_id
-client_id
+-content_id
+-client_id
 
 These identifiers were excluded because they are not predictive features.
 
@@ -47,9 +47,9 @@ Potential leakage was considered by excluding identifier fields and using only o
 
 A transparent rule-based baseline was created using:
 
-CTR
-Average Position
-Trend Percentage
+-CTR
+-Average Position
+-Trend Percentage
 
 Pages with lower CTR, poorer positions, and larger negative trends receive higher refresh scores.
 
@@ -61,9 +61,9 @@ Model used: Random Forest Regressor.
 
 Features:
 
-ctr
-avg_position
-trend_pct
+-ctr
+-avg_position
+-trend_pct
 
 Target:
 
@@ -77,8 +77,8 @@ The dataset was divided using an 80/20 train-test split.
 
 Evaluation metrics:
 
-MAE: 0.1793
-R² Score: 0.8713
+-MAE: 0.1793
+-R² Score: 0.8713
 
 The Random Forest model produced lower prediction error and accurately approximated the baseline scoring approach.
 
@@ -88,9 +88,9 @@ The results are intended for decision-support rather than causal claims.
 
 Feature importance showed:
 
-Trend Percentage
-Average Position
-CTR
+-Trend Percentage
+-Average Position
+-CTR
 
 Observed search trends contributed the most to refresh prioritization.
 
@@ -100,10 +100,10 @@ The model identified pages with declining performance as higher refresh candidat
 
 Recommended actions:
 
-Refresh pages with declining trends.
-Improve pages with low CTR.
-Review pages with poor average positions.
-Monitor stable pages before making changes.
+-Refresh pages with declining trends.
+-Improve pages with low CTR.
+-Review pages with poor average positions.
+-Monitor stable pages before making changes.
 
 Confidence: Medium
 
@@ -117,13 +117,13 @@ https://github.com/Rana4682/flyrank-ml-internship
 
 ## Environment:
 
-Python
-Pandas
-Scikit-learn
+-Python
+-Pandas
+-Scikit-learn
 
 ## Random State:
 
-42
+-42
 
 The project can be reproduced by cloning the repository, installing the required libraries, and running the notebooks from top to bottom.
 
